@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Weihnachtswelt{% endblock %}</title>
+</head>
+<body>
+
+    <Nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('stories') }}">Weihnachtsgeschichten</a>
+        <a href="{{ url_for('history') }}">Geschichte von Weihnachten</a>
+        <a href="{{ url_for('children') }}">Geschichten für Kinder</a>
+    </Nav>
+
+
+    <main>
+
+        <!-- Main content area that child templates can override. -->
+        {% block content%}
+        {% endblock %}
+
+    </main>
+
+
+    <footer>
+        <p>Weihnachtswelt</p>
+    </footer>
+
+
+
+
+    
+</body>
+</html>
