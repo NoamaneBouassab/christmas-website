@@ -1,0 +1,58 @@
+body {
+    background-color: #5c1a1b;
+    color: #fff8e7;
+    text-align: center;
+}
+
+nav {
+    margin: 20px;
+    background-color : #123524; 
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+
+}
+
+
+nav a {
+        margin : 0 20px;
+        padding: 10px;
+        display:inline-block;
+        text-decoration: none;
+        color: #f5e6c8;
+        font-weight: bold;
+        font-size: 20px;
+
+    }
+
+
+/* Use Flex to easily arrange, align, and distribute elements inside a container. */
+.countdown {
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.countdown-box {
+
+    padding: 20px;
+    background-color: #8b1e2d;
+    font-size: 25px;
+    border: 4px solid #d4af37;
+    border-radius: 12px;
+    color: #fff8e7;
+    font-weight: bold;
+
+}
+
+.countdown-box span {
+    display: block;
+    text-align: center;
+}
+
+/* Style the first span (the countdown number) separately. */
+.countdown-box span:first-child {
+    font-size: 40px;
+}
+

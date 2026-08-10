@@ -4,7 +4,40 @@
 
 {% block content %}
 
-<h1>Willkommen zu Weihnachten 🎄</h1>
-<p>Willkommen in unserer Weihnachtswelt !</p>
+
+<section>
+    <h1>Willkommen zu Weihnachten 🎄</h1>
+
+    <h2>Weihnachten kommt in </h2>
+
+    <!-- <span> is used to separate the number from its unit,
+    allowing us to style each part independently with CSS. -->
+   <div class="countdown">     
+    
+        <div class="countdown-box">
+            <span>136</span> 
+            <span>Tage</span>
+        </div>
+
+        <div class="countdown-box">
+            <span>23</span> 
+            <span>Stunden</span>
+        </div>
+
+        <div class="countdown-box">
+            <span>30</span> 
+            <span>Minuten</span>
+        </div>
+        
+        <div class="countdown-box">
+            <span>15</span> 
+            <span>Sekunden</span>
+        </div>
+   </div>
+
+</section>
+
+
+
 
 {% endblock%}
