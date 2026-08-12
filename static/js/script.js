@@ -22,3 +22,74 @@ countdownNumbers[3].textContent = seconds
 }
 updateCountdown();
 setInterval(updateCountdown,1000)
+
+// _____________________________
+
+const wishesContainer = document.querySelector(".wishes-container");
+const wishes = [...wishesContainer.children];
+
+let positions = [];
+let totalWidth = 0;
+
+let isPaused = false;
+
+
+// Pause when the mouse enters the wishes container
+wishesContainer.addEventListener("mouseenter", () => {
+    isPaused = true;
+});
+
+
+// Resume when the mouse leaves the wishes container
+wishesContainer.addEventListener("mouseleave", () => {
+    isPaused = false;
+});
+
+
+wishes.forEach((wish) => {
+    positions.push(wish.offsetLeft);
+    totalWidth += wish.offsetWidth;
+});
+
+const gap = 20;
+totalWidth += gap * (wishes.length - 1);
+
+
+function moveWishes() {
+
+    // Stop moving while the mouse is over the wishes
+    if (isPaused) {
+        requestAnimationFrame(moveWishes);
+        return;
+    }
+
+
+    wishes.forEach((wish, index) => {
+
+        positions[index] -= 1;
+
+
+        // When the wish leaves the left side,
+        // move it to the right side while keeping the same order.
+        if (positions[index] + wish.offsetWidth < 0) {
+
+            const previousIndex =
+                (index - 1 + wishes.length) % wishes.length;
+
+            positions[index] =
+                positions[previousIndex] +
+                wishes[previousIndex].offsetWidth +
+                gap;
+        }
+
+
+        wish.style.transform =
+            `translateX(${positions[index] - wish.offsetLeft}px)`;
+    });
+
+
+    requestAnimationFrame(moveWishes);
+}
+
+
+moveWishes();
